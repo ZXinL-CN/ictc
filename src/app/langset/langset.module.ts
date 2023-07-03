@@ -2,10 +2,10 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MyPage } from './components/my.page';
+import { LangsetPage } from './components/langset.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
-import { MyPageRoutingModule } from './my.routing';
+import { LangsetPageRoutingModule } from './langset.routing';
 import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { TranslateModule } from '@ngx-translate/core';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    MyPageRoutingModule,
-    TranslateModule
+    LangsetPageRoutingModule,
+    TranslateModule,
   ],
-  declarations: [MyPage]
+  declarations: [LangsetPage]
 })
-export class MyPageModule {}
+export class LangsetPageModule {}

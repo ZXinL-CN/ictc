@@ -16,6 +16,10 @@ const routes: Routes = [
         loadChildren: () => import('../my/my.module').then(m => m.MyPageModule)
       },
       {
+        path: 'langset',
+        loadChildren: () => import('../langset/langset.module').then(m => m.LangsetPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'

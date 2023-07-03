@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="{{ '返回' | translate }}"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ '切换语言' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-radio-group [value]="defaultLang">
+      <ion-list-header>
+      </ion-list-header>
+      <ion-item>
+        <ion-radio value="zh" (click)="changeLanguage('zh')">{{ '中文' | translate }}</ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-radio value="en" (click)="changeLanguage('en')">{{ '英文' | translate }}</ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+</ion-content>

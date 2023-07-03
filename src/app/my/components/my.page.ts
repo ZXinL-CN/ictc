@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-my',
@@ -7,6 +9,14 @@ import { Component } from '@angular/core';
 })
 export class MyPage {
 
-  constructor() {}
+  constructor(
+    private translate: TranslateService,
+    public router: Router,
+  ) {}
+
+  public switchLang() {
+    console.log(this.translate);
+    this.router.navigate(['./tabs/langset'])
+  }
 
 }
