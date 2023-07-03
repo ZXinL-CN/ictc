@@ -1,0 +1,8 @@
+{
+  "name": "ICTC",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "a51a3d55"
+}
