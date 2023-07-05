@@ -10,7 +10,7 @@ import { StorageService } from 'src/app/share/storage.service';
 export class LangsetPage implements OnInit {
   constructor(
     private translate: TranslateService,
-    private storageService: StorageService
+    private _storageService: StorageService
   ) {}
 
   public defaultLang: string = '';
@@ -22,7 +22,7 @@ export class LangsetPage implements OnInit {
   public changeLanguage(lang: any) {
     this.translate.setDefaultLang(lang);
     this.translate.use(lang).subscribe(() => {
-      this.storageService.setItem('lang', lang);
+      this._storageService.setItem('lang', lang);
     });
   }
 }

@@ -15,6 +15,10 @@ import {
 } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+import { Drivers } from '@ionic/storage';
+import { IonicStorageModule } from '@ionic/storage-angular';
+import { StorageService } from './share/storage.service';
+
 /**
  * 导出加载函数
  * @param http HttpClient对象
@@ -38,8 +42,14 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
+    IonicStorageModule.forRoot({
+      name: '__ictc__db',
+      storeName: '__ictc__store',
+      driverOrder: [Drivers.LocalStorage, Drivers.IndexedDB],
+    }),
   ],
   providers: [
+    StorageService,
     TranslateService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
@@ -47,25 +57,26 @@ export function HttpLoaderFactory(http: HttpClient) {
   exports: [TranslateModule],
 })
 export class AppModule {
-  // 默认语言
-  private lang: any = 'zh';
 
-  constructor(private platform: Platform, public translate: TranslateService) {
-    platform.ready().then(async () => {
-      this.initTranslateConfig();
+  constructor(
+    private platform: Platform,
+    public translate: TranslateService,
+    public storageService: StorageService
+  ) {
+    this.platform.ready().then(async () => {
+      await this.storageService.init();
+      await this.initTranslateConfig();
     });
     console.log('App start...');
   }
 
-  public initTranslateConfig() {
+  public async initTranslateConfig() {
     console.log('initTranslateConfig...');
-    // 添加要支持的语言
+    const lang = await this.storageService.getItem('lang');
     this.translate.addLangs(['zh', 'en']);
-    // 设置默认语言
-    this.translate.setDefaultLang(this.lang);
-    // 语言切换处理
-    this.translate.use(this.lang).subscribe(() => {
-      console.log('语言切换=' + this.lang);
+    this.translate.setDefaultLang(lang || 'zh');
+    this.translate.use(lang).subscribe(() => {
+      console.log('语言切换：' + lang);
     });
   }
 }
