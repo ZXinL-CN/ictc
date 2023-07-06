@@ -75,7 +75,7 @@ export class AppModule {
     const lang = await this.storageService.getItem('lang');
     this.translate.addLangs(['zh', 'en']);
     this.translate.setDefaultLang(lang || 'zh');
-    this.translate.use(lang).subscribe(() => {
+    this.translate.use(lang || 'zh').subscribe(() => {
       console.log('语言切换：' + lang);
     });
   }
