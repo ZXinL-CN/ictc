@@ -1,3 +1,20 @@
-<p>
-  login works!
-</p>
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="login">
+    <ion-item>
+      <ion-label position="stacked">{{'邮箱' | translate}}</ion-label>
+      <ion-input type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">{{'密码' | translate}}</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-item class="login">
+      <ion-label>{{'确认登录' | translate}}</ion-label>
+    </ion-item>
+  </ion-card>
+</ion-content>

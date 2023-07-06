@@ -8,5 +8,7 @@
     "通用设置": "General Settings",
     "个人信息": "Personal Information",
     "用户名": "User Name",
-    "退出登录": "Log Out"
+    "退出登录": "Log Out",
+    "邮箱": "Email",
+    "密码": "Password"
 }
