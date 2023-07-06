@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { StorageService } from 'src/app/share/storage.service';
+import { StorageService } from 'src/app/share/services/storage.service';
 
 @Component({
   selector: 'app-langset',

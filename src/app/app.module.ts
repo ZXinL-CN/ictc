@@ -17,7 +17,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { Drivers } from '@ionic/storage';
 import { IonicStorageModule } from '@ionic/storage-angular';
-import { StorageService } from './share/storage.service';
+import { StorageService } from './share/services/storage.service';
 
 /**
  * 导出加载函数

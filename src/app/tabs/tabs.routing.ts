@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './components/tabs.page';
+import { canActivateLogin } from '../share/guards/login.guard';
 
 const routes: Routes = [
   {
@@ -13,7 +14,8 @@ const routes: Routes = [
       },
       {
         path: 'my',
-        loadChildren: () => import('../my/my.module').then(m => m.MyPageModule)
+        loadChildren: () => import('../my/my.module').then(m => m.MyPageModule),
+        canActivate: [canActivateLogin],
       },
       {
         path: 'langset',
@@ -36,4 +38,4 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }
