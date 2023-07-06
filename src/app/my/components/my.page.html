@@ -1,18 +1,35 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <!-- <ion-toolbar>
     <ion-title>
       {{'我的'| translate}}
     </ion-title>
-  </ion-toolbar>
+  </ion-toolbar> -->
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{'我的' | translate}}</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-item (click)="switchLang()">{{'切换语言' | translate}}</ion-item>
+  <ion-card class="info">
+    <ion-avatar>
+      <img alt="Silhouette of a person's head" src="../../../assets/icon/avatar.svg" />
+    </ion-avatar>
+    <ion-card-header>
+      <ion-card-title>{{'用户名' | translate}}</ion-card-title>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+    </ion-card-header>
 
-  <app-explore-container name="{{'我的' | translate}}"></app-explore-container>
+    <ion-card-content>
+      Here's a small text description for the card content. Nothing more, nothing less.
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <!-- <ion-card-content> -->
+    <ion-item>{{'个人信息' | translate}}</ion-item>
+    <ion-item>{{'通用设置' | translate}}</ion-item>
+    <ion-item (click)="switchLang()">{{'切换语言' | translate}}</ion-item>
+    <!-- </ion-card-content> -->
+  </ion-card>
+  <ion-card>
+    <ion-item class="logout">
+      <ion-label>{{'退出登录' | translate}}</ion-label>
+    </ion-item>
+  </ion-card>
 </ion-content>
