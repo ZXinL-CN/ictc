@@ -1,3 +1,15 @@
+ion-content {
+  --background: url(../../../assets//images//bj_01.jpg) 100%/cover no-repeat;
+}
+
+ion-card {
+  --ion-card-background: #ffffff66;
+}
+
+ion-item {
+  --ion-item-background: #ffffff66;
+}
+
 .info {
   ion-avatar {
     margin: 10px auto;
@@ -10,7 +22,7 @@
 
 .logout {
   --ion-item-color: #fff;
-  --ion-item-background: #eb445a;
+  --ion-item-background: #eb445add;
 
   ion-label {
     text-align: center;

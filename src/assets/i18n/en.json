@@ -10,5 +10,7 @@
     "用户名": "User Name",
     "退出登录": "Log Out",
     "邮箱": "Email",
-    "密码": "Password"
+    "密码": "Password",
+    "登录": "Login",
+    "确认登录": "Confirm login"
 }

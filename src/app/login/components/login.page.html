@@ -1,20 +1,25 @@
-<ion-header [translucent]="true">
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="goHome()">
+        <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{'登录'|translate}}</ion-title>
+  </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-card class="login">
     <ion-item>
-      <ion-label position="stacked">{{'邮箱' | translate}}</ion-label>
-      <ion-input type="email"></ion-input>
+      <ion-label position="stacked">{{'用户名' | translate}}</ion-label>
+      <ion-input type="username" [(ngModel)]="username"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="stacked">{{'密码' | translate}}</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
     </ion-item>
   </ion-card>
-  <ion-card>
-    <ion-item class="login">
-      <ion-label>{{'确认登录' | translate}}</ion-label>
-    </ion-item>
-  </ion-card>
+  <!-- <ion-card> -->
+  <ion-button expand="full" shape="round" [disabled]="!enLogin" (click)="onLogin()">{{'确认登录' | translate}}</ion-button>
+  <!-- </ion-card> -->
 </ion-content>
